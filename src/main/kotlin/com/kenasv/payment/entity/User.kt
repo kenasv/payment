@@ -1,5 +1,6 @@
 package com.kenasv.payment.entity
 
+import io.jmix.core.FileRef
 import io.jmix.core.HasTimeZone
 import io.jmix.core.annotation.Secret
 import io.jmix.core.entity.annotation.JmixGeneratedValue
@@ -51,6 +52,9 @@ open class User : JmixUserDetails, HasTimeZone {
 
     @Column(name = "ACTIVE")
     var active: Boolean? = true
+
+    @Column(name = "PICTURE", length = 1024)
+    var picture: FileRef? = null
 
     @Column(name = "TIME_ZONE_ID")
     @get:JvmName("getTimeZoneId_")
