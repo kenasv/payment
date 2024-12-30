@@ -1,6 +1,9 @@
 package com.kenasv.payment.entity
 
+import io.jmix.core.MetadataTools
 import io.jmix.core.entity.annotation.JmixGeneratedValue
+import io.jmix.core.metamodel.annotation.DependsOnProperties
+import io.jmix.core.metamodel.annotation.InstanceName
 import io.jmix.core.metamodel.annotation.JmixEntity
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotNull
@@ -42,4 +45,8 @@ open class Houseroom {
     @Version
     var version: Int? = null
 
+    @InstanceName
+    @DependsOnProperties("region", "city", "street", "house", "apartmentnumber")
+    fun getInstanceName(metadataTools: MetadataTools): String =
+        "${metadataTools.format(region)} ${metadataTools.format(city)} ${metadataTools.format(street)} ${metadataTools.format(house)} ${metadataTools.format(apartmentnumber)}".trim()
 }
