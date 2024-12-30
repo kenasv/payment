@@ -5,7 +5,9 @@
     <data>
         <instance id="counterDc"
                   class="com.kenasv.payment.entity.Counter">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="address" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="counterDl"/>
         </instance>
     </data>
@@ -24,6 +26,12 @@
             </responsiveSteps>
             <textField id="nameField" property="name"/>
             <textField id="nomerField" property="nomer"/>
+            <entityPicker id="addressField" property="address">
+                <actions>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+            </entityPicker>
         </formLayout>
         <hbox id="detailActions">
             <button id="saveAndCloseButton" action="saveAction"/>

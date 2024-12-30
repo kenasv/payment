@@ -6,7 +6,9 @@
     <data>
         <collection id="countersDc"
                     class="com.kenasv.payment.entity.Counter">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="address" fetchPlan="_base"/>
+            </fetchPlan>
             <loader id="countersDl" readOnly="true">
                 <query>
                     <![CDATA[select e from Counter e]]>
@@ -49,6 +51,7 @@
             <columns resizable="true">
                 <column property="name"/>
                 <column property="nomer"/>
+                <column property="address"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

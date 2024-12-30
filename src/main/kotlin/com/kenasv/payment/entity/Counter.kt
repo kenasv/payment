@@ -16,10 +16,6 @@ open class Counter {
     @Id
     var id: UUID? = null
 
-    @JoinColumn(name = "ADDRESS_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    var address: Houseroom? = null
-
     @NotNull
     @InstanceName
     @Column(name = "NAME", nullable = false)
@@ -27,5 +23,9 @@ open class Counter {
 
     @Column(name = "NOMER")
     var nomer: String? = null
+
+    @JoinColumn(name = "ADDRESS_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    var address: Houseroom? = null
 
 }
