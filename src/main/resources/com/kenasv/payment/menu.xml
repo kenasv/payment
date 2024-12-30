@@ -7,6 +7,8 @@
         <item view="Houseroom.list" title="msg://com.kenasv.payment.view.houseroom/houseroomListView.title"/>
         <item view="Typepaymentreceipt.list"
               title="msg://com.kenasv.payment.view.typepaymentreceipt/typepaymentreceiptListView.title"/>
+        <item view="Paymentreceipt.list"
+              title="msg://com.kenasv.payment.view.paymentreceipt/paymentreceiptListView.title"/>
     </menu>
 
 </menu-config>
