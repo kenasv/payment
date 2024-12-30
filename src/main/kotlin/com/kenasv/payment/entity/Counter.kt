@@ -8,9 +8,7 @@ import jakarta.validation.constraints.NotNull
 import java.util.*
 
 @JmixEntity
-@Table(name = "COUNTER", indexes = [
-    Index(name = "IDX_COUNTER_ADDRESS", columnList = "ADDRESS_ID")
-])
+@Table(name = "COUNTER")
 @Entity
 open class Counter {
     @JmixGeneratedValue
