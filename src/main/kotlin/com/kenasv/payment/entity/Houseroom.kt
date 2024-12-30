@@ -7,7 +7,9 @@ import jakarta.validation.constraints.NotNull
 import java.util.*
 
 @JmixEntity
-@Table(name = "HOUSEROOM")
+@Table(name = "HOUSEROOM", uniqueConstraints = [
+    UniqueConstraint(name = "IDX_HOUSEROOM_UNQ", columnNames = ["ID"])
+])
 @Entity
 open class Houseroom {
     @JmixGeneratedValue
