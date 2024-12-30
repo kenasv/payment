@@ -6,9 +6,7 @@ import jakarta.persistence.*
 import java.util.*
 
 @JmixEntity
-@Table(name = "PAYMENTRECEIPT", uniqueConstraints = [
-    UniqueConstraint(name = "IDX_PAYMENTRECEIPT_UNQ", columnNames = ["ID"])
-])
+@Table(name = "PAYMENTRECEIPT")
 @Entity
 open class Paymentreceipt {
     @JmixGeneratedValue
